@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{EDD412F3-D65
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vision2.Api", "src\lib\Vision2.Api.csproj", "{5713C4D6-C1D3-4BA1-A223-F060A18785F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vision2.Api.Tests", "Vision2.Api.Tests\Vision2.Api.Tests.csproj", "{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5713C4D6-C1D3-4BA1-A223-F060A18785F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5713C4D6-C1D3-4BA1-A223-F060A18785F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5713C4D6-C1D3-4BA1-A223-F060A18785F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,6 +34,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EDD412F3-D653-4067-917E-3B38D8A50A2E} = {A39281C5-D35A-474C-91C9-E5AD85E3AD78}
 		{5713C4D6-C1D3-4BA1-A223-F060A18785F6} = {EDD412F3-D653-4067-917E-3B38D8A50A2E}
+		{18831B4F-EA2E-4474-B8F1-8FB321B6AE4D} = {3A671F99-225D-4CA6-8727-BE944D5857AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {278D7CFE-9D5E-4DBA-8F4B-AC434852051D}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Vision2.Api.Extensions {
     public static class StringExtension {
@@ -54,5 +56,22 @@ namespace Vision2.Api.Extensions {
 
             return ret;
         }
+
+        public static T FromJson<T>(this string item) {
+            if (String.IsNullOrEmpty(item))
+                return default(T);
+
+            var jsonString = JToken.Parse(item).ToString();
+
+            return JsonConvert.DeserializeObject<T>(jsonString);
+        }
+
+        public static object FromJson(this string item, Type type) {
+            if (String.IsNullOrEmpty(item))
+                return null;
+
+            return JsonConvert.DeserializeObject(item, type);
+        }
+
     }
 }

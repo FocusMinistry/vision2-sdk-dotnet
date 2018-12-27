@@ -68,7 +68,7 @@ namespace Vision2.Api {
         #endregion Properties
 
         #region Constructor
-        protected BaseApiSet(Vision2Token token, string subscriptionKey, string baseUrl, ContentType contentType) {
+        protected BaseApiSet(Vision2Token token, string subscriptionKey, string baseUrl, ContentType contentType = ContentType.JSON) {
             _token = token;
             _baseUrl = baseUrl;
             _contentType = contentType;

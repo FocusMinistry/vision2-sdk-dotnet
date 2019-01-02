@@ -13,5 +13,9 @@ namespace Vision2.Api {
         public bool IsStaging { get; set; }
 
         public string TenantCode { get; set; }
+
+        public string Username { get; set; }
+
+        public string Password { get; set; }
     }
 }

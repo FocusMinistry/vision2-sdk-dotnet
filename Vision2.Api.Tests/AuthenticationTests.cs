@@ -12,13 +12,13 @@ namespace Vision2.Api.Tests {
         public void Setup() {
             _options = new Vision2Options {
                 IsStaging = true,
-                TenantCode = "prodmgmt3"
+                TenantCode = ""
             };
         }
 
         [Test]
         public async Task integration_authentication_login_with_creds() {
-           var token = await Vision2Client.RequestAccessTokenAsync(_options, "chadmeyer@52projectsllc.com", "Pa$$w0rd");
+           var token = await Vision2Client.RequestAccessTokenAsync(_options, "", "");
             token.Data.ShouldNotBe(null);
             token.StatusCode.ShouldBe(System.Net.HttpStatusCode.OK);
         }

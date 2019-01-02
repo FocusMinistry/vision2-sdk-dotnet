@@ -14,23 +14,25 @@ using Vision2.Api.Extensions;
 
 namespace Vision2.Api {
     public class Vision2Client {
+        public Vision2Client(Vision2Options options, Vision2Token token) {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12 | System.Net.SecurityProtocolType.Tls11;
+        }
 
-
-        /// <summary>
-        /// Request an access token from Vision2
-        /// </summary>
-        /// <param name="options">Options for the Vision2 Client</param>
-        /// <param name="username">The username to authenticate</param>
-        /// <param name="password">The password to authenticate
-        /// <returns>An OAuth Token object to use for subsequent requests</returns>
-        public static async Task<IVision2Response<Vision2Token>> RequestAccessTokenAsync(Vision2Options options, string username, string password) {
+            /// <summary>
+            /// Request an access token from Vision2
+            /// </summary>
+            /// <param name="options">Options for the Vision2 Client</param>
+            /// <param name="username">The username to authenticate</param>
+            /// <param name="password">The password to authenticate
+            /// <returns>An OAuth Token object to use for subsequent requests</returns>
+            public static async Task<IVision2Response<Vision2Token>> RequestAccessTokenAsync(Vision2Options options) {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12 | System.Net.SecurityProtocolType.Tls11;
             using (var httpClient = new HttpClient()) {
                 var content = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("grant_type", "password"),
-                    new KeyValuePair<string, string>("username", username),
-                    new KeyValuePair<string, string>("password", password),
+                    new KeyValuePair<string, string>("username", options.Username),
+                    new KeyValuePair<string, string>("password", options.Password),
                 });
 
                 var url = new Uri(options.IsStaging ? $"https://{options.TenantCode}.v2sdemo.com" : $"https://{options.TenantCode}.vision2systems.com");
